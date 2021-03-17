@@ -15,12 +15,23 @@ public class FizzBuzzApplication {
     @Bean
     public CommandLineRunner run(){
         return args ->{
-            for(int i=1;i<101;i++){
-                String result = "";
-                result += (i % 3) == 0 ? "Fizz" : "";
-                result += (i % 5) == 0 ? "Buzz" : "";
-                System.out.println(!result.isEmpty() ? result : i);
+            int n = 100;
+            for (int i=1; i<=n; i++)
+            {
+                // divisible by 15
+                if (i%15==0)
+                    System.out.print("FizzBuzz"+" ");
+                    // divisible by 5, print 'Buzz'
+                else if (i%5==0)
+                    System.out.print("Buzz"+" ");
+                    // divisible by 3, print 'Fizz'
+                else if (i%3==0)
+                    System.out.print("Fizz"+" ");
+
+                else // print the numbers
+                    System.out.print(i+" ");
             }
+
         };
     }
 }
